@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A web application hacker's toolbox. Base64 encoding/decoding, URL encoding/decoding, MD5/SHA1/SHA256/HMAC hashing, code deobfuscation, formatting, highlighting and much more.">
+  <meta name="author" content="Michael Henriksen">
+  <title>HackPad</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/stylesheets/tomorrow-night.css">
+  <link rel="stylesheet" href="/assets/stylesheets/application.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form>
+          <div class="control-group">
+            <label class="control-label" for="input">Input</label>
+              <div class="controls">
+                <textarea id="input" placeholder="Put stuff here to encode, decode, hash, beautify, etc."></textarea>
+              </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+
+    </div>
+
+    <div class="row" style="margin-top: 20px">
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+          <li data-tab="encoding" class="active"><a href="#encoding_tab" data-toggle="tab">Encoding</a></li>
+          <li data-tab="decoding"><a href="#decoding_tab" data-toggle="tab">Decoding</a></li>
+          <li data-tab="hashing"><a href="#hashing_tab" data-toggle="tab">Hashing</a></li>
+          <li data-tab="beautifying"><a href="#beautifying_tab" data-toggle="tab">Beautifying</a></li>
+          <li data-tab="misc"><a href="#misc_tab" data-toggle="tab">Misc</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="encoding_tab">
+            <div class="row">
+              <div class="col-md-6 output-container" id="base64_encoding_container">
+                <label class="control-label" for="base64_encoding">Base64 encoded</label>
+                <textarea readonly class="output-field" id="base64_encoding"></textarea>
+                <span data-target="#base64_encoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <label><input type="checkbox" id="url_safe_base64"> URL safe Base64</label>
+              </div>
+              <div class="col-md-6 output-container" id="url_encoding_container">
+                <label class="control-label" for="url_encoding">URL encoded</label>
+                <textarea readonly class="output-field" id="url_encoding"></textarea>
+                <span data-target="#url_encoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <label><input type="checkbox" id="url_encode_all"> Encode all characters</label>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-6 output-container" id="ascii_hex_encoding_container">
+                <label class="control-label" for="ascii_hex_encoding">ASCII hex encoded</label>
+                <textarea readonly class="output-field" id="ascii_hex_encoding"></textarea>
+                <span data-target="#ascii_hex_encoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+              <div class="col-md-6 output-container" id="html_entity_escaping_container">
+                <label class="control-label" for="html_entity_escaping">HTML entity escaped</label>
+                <textarea readonly class="output-field" id="html_entity_escaping"></textarea>
+                <span data-target="#html_entity_escaping" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="decoding_tab">
+            <div class="row">
+              <div class="col-md-6 output-container" id="base64_decoding_container">
+                <label class="control-label" for="base64_decoding">Base64 decoded</label>
+                <textarea readonly class="output-field" id="base64_decoding"></textarea>
+                <span data-target="#base64_decoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+              <div class="col-md-6 output-container" id="url_decoding_container">
+                <label class="control-label" for="url_decoding">URL decoded</label>
+                <textarea readonly class="output-field" id="url_decoding"></textarea>
+                <span data-target="#url_decoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-6 output-container" id="ascii_hex_decoding_container">
+                <label class="control-label" for="ascii_hex_decoding">ASCII hex decoded</label>
+                <textarea readonly class="output-field" id="ascii_hex_decoding"></textarea>
+                <span data-target="#ascii_hex_decoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+              <div class="col-md-6 output-container" id="html_entity_unescaping_container">
+                <label class="control-label" for="html_entity_unescaping">HTML entity unescaped</label>
+                <textarea readonly class="output-field" id="html_entity_unescaping"></textarea>
+                <span data-target="#html_entity_unescaping" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="hashing_tab">
+            <div class="row">
+              <div class="col-md-6 output-container" id="md5_hashing_container">
+                <label class="control-label" for="md5_hashing">MD5 hashed</label>
+                <textarea readonly class="output-field" id="md5_hashing"></textarea>
+                <span data-target="#md5_hashing" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+
+              <div class="col-md-6 output-container" id="hmac_hashing_container">
+                <label class="control-label" for="hmac_hashing">HMAC hashed</label>
+                <textarea readonly class="output-field" id="hmac_hashing"></textarea>
+
+                <div class="row" style="margin-top:2px">
+                  <div class="col-md-9">
+                    <input id="hmac_hashing_secret" placeholder="Secret..." />
+                  </div>
+                  <div class="col-md-3">
+                    <span data-target="#hmac_hashing" class="glyphicon glyphicon-new-window use-as-input"></span>
+                    <select id="hmac_hashing_message_digest" title="Select message digest to use...">
+                      <option value="md5">MD5</option>
+                      <option value="sha1">SHA1</option>
+                      <option value="sha256">SHA256</option>
+                      <option value="sha512">SHA512</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-6 output-container" id="sha1_hashing_container">
+                <label class="control-label" for="sha1_hashing">SHA1 hashed</label>
+                <textarea readonly class="output-field" id="sha1_hashing"></textarea>
+                <span data-target="#sha1_hashing" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+              <div class="col-md-6 output-container" id="sha256_hashing_container">
+                <label class="control-label" for="sha256_hashing">SHA256 hashed</label>
+                <textarea readonly class="output-field" id="sha256_hashing"></textarea>
+                <span data-target="#sha256_hashing" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="beautifying_tab">
+            <div class="row">
+              <div class="col-md-6 output-container" id="javascript_beautifying_container">
+                <label class="control-label" for="javascript_beautifying">Beautified Javascript</label>
+                <pre class="output-field" id="javascript_beautifying"></pre>
+                <button type="button" id="beautify_javascript" class="btn btn-default btn-sm">Beautify</button>
+              </div>
+              <div class="col-md-6 output-container" id="json_beautifying_container">
+                <label class="control-label" for="json_beautifying">Beautified JSON</label>
+                <pre class="output-field" id="json_beautifying"></pre>
+                <button type="button" id="beautify_json" class="btn btn-default btn-sm">Beautify</button>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-6 output-container" id="html_beautifying_container">
+                <label class="control-label" for="html_beautifying">Beautified HTML/XML</label>
+                <pre class="output-field" id="html_beautifying"></pre>
+                <button type="button" id="beautify_html" class="btn btn-default btn-sm">Beautify</button>
+              </div>
+              <div class="col-md-6 output-container" id="css_beautifying_container">
+                <label class="control-label" for="css_beautifying">Beautified CSS</label>
+                <pre class="output-field" id="css_beautifying"></pre>
+                <button type="button" id="beautify_css" class="btn btn-default btn-sm">Beautify</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="misc_tab">
+            <div class="row">
+              <div class="col-md-6 output-container" id="uppercasing_container">
+                <label class="control-label" for="uppercasing">Uppercased</label>
+                <textarea readonly class="output-field" id="uppercasing"></textarea>
+                <span data-target="#uppercasing" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+              <div class="col-md-6 output-container" id="lowercasing_container">
+                <label class="control-label" for="lowercasing">Lowercased</label>
+                <textarea readonly class="output-field" id="lowercasing"></textarea>
+                <span data-target="#lowercasing" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-6 output-container" id="reversing_container">
+                <label class="control-label" for="reversing">Reversed</label>
+                <textarea readonly class="output-field" id="reversed"></textarea>
+                <span data-target="#reversed" class="glyphicon glyphicon-new-window use-as-input"></span>
+              </div>
+              <div class="col-md-6 output-container" id="bit_flipping_container">
+                <label class="control-label" for="bit_flipping">Bit-flipped</label>
+                <textarea readonly class="output-field" id="bit_flipping"></textarea>
+                <span data-target="#bit_flipping" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <button type="button" id="flip_again" class="btn btn-default btn-sm">Flip again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div id="about">
+        Created by <a href="https://twitter.com/michenriksen">Michael Henriksen</a> &middot;
+        <a href="https://github.com/michenriksen/hackpad">Fork the code on GitHub</a> &middot;
+        <a href="https://flattr.com/submit/auto?user_id=michenriksen&amp;title=HackPad&amp;category=software&amp;language=en_GB&amp;url=https%3A%2F%2Fhackpad.herokuapp.com%2F" target="_blank"><img src="//api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="noscript">
+      <h1>Being paranoid is good, but this site requires Javascript.</h1>
+    </div>
+  </noscript>
+
+  <script src="//code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="/assets/javascripts/jquery.textchange.min.js" type="text/javascript"></script>
+  <script src="/assets/javascripts/cryptojs.bundle.js" type="text/javascript"></script>
+  <script src="/assets/javascripts/rainbow-custom.min.js" type="text/javascript"></script>
+  <script src="/assets/javascripts/js-beautify/unpackers.js" type="text/javascript"></script>
+  <script src="/assets/javascripts/js-beautify.js" type="text/javascript"></script>
+  <script src="/assets/javascripts/application.js" type="text/javascript"></script>
+</body>
+</html>
