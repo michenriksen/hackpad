@@ -46,6 +46,10 @@ hr {
   width: 100%;
 }
 
+#hmac_hashing_message_digest {
+  width:70px;
+}
+
 .btn.btn-default {
   background-color: transparent;
   color: inherit;
