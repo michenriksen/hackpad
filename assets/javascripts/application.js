@@ -250,6 +250,11 @@ $(document).ready(function() {
     'title': 'Transfer to input field'
   });
 
+  $('.view-larger').tooltip({
+    'placement': 'left',
+    'title': 'View output in bigger window'
+  });
+
   $("#input").on('focus', function() {
     $(this).select();
   });
@@ -292,6 +297,18 @@ $(document).ready(function() {
       var currentTab = $('.nav.nav-tabs li.active').attr('data-tab');
       TabController.render(currentTab, value);
     }
+  });
+
+  $('.view-larger').on('click', function(e) {
+    e.preventDefault();
+    var target = $($(this).attr('data-target'));
+    if ($(target).is('pre')) {
+      var modalBody = $('<pre />').addClass('output-field large').html($(target).html());
+    } else {
+      var modalBody = $('<textarea readonly />').addClass('output-field large').val($(target).val());
+    }
+    $('#view-larger-modal .modal-body').html(modalBody);
+    $('#view-larger-modal').modal('show');
   });
 
   $('#hmac_hashing_secret').on('textchange', function() {

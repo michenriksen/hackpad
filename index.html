@@ -47,12 +47,14 @@
                 <label class="control-label" for="base64_encoding">Base64 encoded</label>
                 <textarea readonly class="output-field" id="base64_encoding"></textarea>
                 <span data-target="#base64_encoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#base64_encoding" class="glyphicon glyphicon-fullscreen view-larger"></span>
                 <label><input type="checkbox" id="url_safe_base64"> URL safe Base64</label>
               </div>
               <div class="col-md-6 output-container" id="url_encoding_container">
                 <label class="control-label" for="url_encoding">URL encoded</label>
                 <textarea readonly class="output-field" id="url_encoding"></textarea>
                 <span data-target="#url_encoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#url_encoding" class="glyphicon glyphicon-fullscreen view-larger"></span>
                 <label><input type="checkbox" id="url_encode_all"> Encode all characters</label>
               </div>
             </div>
@@ -64,11 +66,13 @@
                 <label class="control-label" for="ascii_hex_encoding">ASCII hex encoded</label>
                 <textarea readonly class="output-field" id="ascii_hex_encoding"></textarea>
                 <span data-target="#ascii_hex_encoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#ascii_hex_encoding" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
               <div class="col-md-6 output-container" id="html_entity_escaping_container">
                 <label class="control-label" for="html_entity_escaping">HTML entity escaped</label>
                 <textarea readonly class="output-field" id="html_entity_escaping"></textarea>
                 <span data-target="#html_entity_escaping" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#html_entity_escaping" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
             </div>
           </div>
@@ -79,11 +83,13 @@
                 <label class="control-label" for="base64_decoding">Base64 decoded</label>
                 <textarea readonly class="output-field" id="base64_decoding"></textarea>
                 <span data-target="#base64_decoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#base64_decoding" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
               <div class="col-md-6 output-container" id="url_decoding_container">
                 <label class="control-label" for="url_decoding">URL decoded</label>
                 <textarea readonly class="output-field" id="url_decoding"></textarea>
                 <span data-target="#url_decoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#url_decoding" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
             </div>
 
@@ -94,11 +100,13 @@
                 <label class="control-label" for="ascii_hex_decoding">ASCII hex decoded</label>
                 <textarea readonly class="output-field" id="ascii_hex_decoding"></textarea>
                 <span data-target="#ascii_hex_decoding" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#ascii_hex_decoding" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
               <div class="col-md-6 output-container" id="html_entity_unescaping_container">
                 <label class="control-label" for="html_entity_unescaping">HTML entity unescaped</label>
                 <textarea readonly class="output-field" id="html_entity_unescaping"></textarea>
                 <span data-target="#html_entity_unescaping" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#html_entity_unescaping" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
             </div>
           </div>
@@ -109,6 +117,7 @@
                 <label class="control-label" for="md5_hashing">MD5 hashed</label>
                 <textarea readonly class="output-field" id="md5_hashing"></textarea>
                 <span data-target="#md5_hashing" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#md5_hashing" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
 
               <div class="col-md-6 output-container" id="hmac_hashing_container">
@@ -121,6 +130,7 @@
                   </div>
                   <div class="col-md-3">
                     <span data-target="#hmac_hashing" class="glyphicon glyphicon-new-window use-as-input"></span>
+                    <span data-target="#hmac_hashing" class="glyphicon glyphicon-fullscreen view-larger"></span>
                     <select id="hmac_hashing_message_digest" title="Select message digest to use...">
                       <option value="md5">MD5</option>
                       <option value="sha1">SHA1</option>
@@ -139,11 +149,13 @@
                 <label class="control-label" for="sha1_hashing">SHA1 hashed</label>
                 <textarea readonly class="output-field" id="sha1_hashing"></textarea>
                 <span data-target="#sha1_hashing" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#sha1_hashing" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
               <div class="col-md-6 output-container" id="sha256_hashing_container">
                 <label class="control-label" for="sha256_hashing">SHA256 hashed</label>
                 <textarea readonly class="output-field" id="sha256_hashing"></textarea>
                 <span data-target="#sha256_hashing" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#sha256_hashing" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
             </div>
           </div>
@@ -153,11 +165,13 @@
               <div class="col-md-6 output-container" id="javascript_beautifying_container">
                 <label class="control-label" for="javascript_beautifying">Beautified Javascript</label>
                 <pre class="output-field" id="javascript_beautifying"></pre>
+                <span data-target="#javascript_beautifying" class="glyphicon glyphicon-fullscreen view-larger"></span>
                 <button type="button" id="beautify_javascript" class="btn btn-default btn-sm">Beautify</button>
               </div>
               <div class="col-md-6 output-container" id="json_beautifying_container">
                 <label class="control-label" for="json_beautifying">Beautified JSON</label>
                 <pre class="output-field" id="json_beautifying"></pre>
+                <span data-target="#json_beautifying" class="glyphicon glyphicon-fullscreen view-larger"></span>
                 <button type="button" id="beautify_json" class="btn btn-default btn-sm">Beautify</button>
               </div>
             </div>
@@ -168,11 +182,13 @@
               <div class="col-md-6 output-container" id="html_beautifying_container">
                 <label class="control-label" for="html_beautifying">Beautified HTML/XML</label>
                 <pre class="output-field" id="html_beautifying"></pre>
+                <span data-target="#html_beautifying" class="glyphicon glyphicon-fullscreen view-larger"></span>
                 <button type="button" id="beautify_html" class="btn btn-default btn-sm">Beautify</button>
               </div>
               <div class="col-md-6 output-container" id="css_beautifying_container">
                 <label class="control-label" for="css_beautifying">Beautified CSS</label>
                 <pre class="output-field" id="css_beautifying"></pre>
+                <span data-target="#css_beautifying" class="glyphicon glyphicon-fullscreen view-larger"></span>
                 <button type="button" id="beautify_css" class="btn btn-default btn-sm">Beautify</button>
               </div>
             </div>
@@ -184,11 +200,13 @@
                 <label class="control-label" for="uppercasing">Uppercased</label>
                 <textarea readonly class="output-field" id="uppercasing"></textarea>
                 <span data-target="#uppercasing" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#uppercasing" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
               <div class="col-md-6 output-container" id="lowercasing_container">
                 <label class="control-label" for="lowercasing">Lowercased</label>
                 <textarea readonly class="output-field" id="lowercasing"></textarea>
                 <span data-target="#lowercasing" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#lowercasing" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
             </div>
 
@@ -199,11 +217,13 @@
                 <label class="control-label" for="reversing">Reversed</label>
                 <textarea readonly class="output-field" id="reversed"></textarea>
                 <span data-target="#reversed" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#reversed" class="glyphicon glyphicon-fullscreen view-larger"></span>
               </div>
               <div class="col-md-6 output-container" id="bit_flipping_container">
                 <label class="control-label" for="bit_flipping">Bit-flipped</label>
                 <textarea readonly class="output-field" id="bit_flipping"></textarea>
                 <span data-target="#bit_flipping" class="glyphicon glyphicon-new-window use-as-input"></span>
+                <span data-target="#bit_flipping" class="glyphicon glyphicon-fullscreen view-larger"></span>
                 <button type="button" id="flip_again" class="btn btn-default btn-sm">Flip again</button>
               </div>
             </div>
@@ -222,6 +242,21 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal fade in" id="view-larger-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">A Closer Look...</h4>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <noscript>
     <div class="noscript">

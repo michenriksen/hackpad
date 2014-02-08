@@ -62,6 +62,12 @@ hr {
   margin-bottom: 0px;
 }
 
+.output-field.large {
+  height: 550px;
+  min-height: 550px;
+  overflow: scroll;
+}
+
 .output-field .close {
   float: none;
   font-size: inherit;
@@ -73,10 +79,10 @@ hr {
   cursor: inherit;
 }
 
-.use-as-input {
+.use-as-input, .view-larger {
   float: right;
   margin-top: 2px;
-  margin-right: 2px;
+  margin-right: 5px;
   cursor: pointer;
 }
 
@@ -101,6 +107,19 @@ hr {
 
 .tab-content {
   margin-top: 20px;
+}
+
+.modal-dialog.modal-lg {
+  width: 900px;
+}
+
+.modal-content {
+  background-color: #282a2e;
+  color: #c5c8c6;
+}
+
+.modal-header, .modal-footer {
+  border-color: #373b41;
 }
 
 #about {
