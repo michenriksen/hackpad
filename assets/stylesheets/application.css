@@ -150,3 +150,11 @@ hr {
   text-align: center;
   padding-top: 20%;
 }
+
+.loader {
+  background: #282a2e url('../images/loader.gif') top left no-repeat;
+  width: 16px;
+  height: 16px;
+  display: none;
+  vertical-align: middle;
+}

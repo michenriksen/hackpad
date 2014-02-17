@@ -324,13 +324,17 @@ $(document).ready(function() {
     code = $('#input').val();
 
     if (code !== '') {
-      Beautify.javascript(code, function(beautified) {
-        if (beautified !== null) {
-          $('#javascript_beautifying').html(beautified);
-        } else {
-          $('#javascript_beautifying').html('<p>Invalid Javascript.</p>');
-        }
-      });
+      $('#javascript_beautifying_container .loader').css('display', 'inline-block');
+      setTimeout(function() {
+        Beautify.javascript(code, function(beautified) {
+          $('#javascript_beautifying_container .loader').css('display', 'none');
+          if (beautified !== null) {
+            $('#javascript_beautifying').html(beautified);
+          } else {
+            $('#javascript_beautifying').html('<p>Invalid Javascript.</p>');
+          }
+        });
+      }, 100);
     }
   });
 
@@ -339,13 +343,17 @@ $(document).ready(function() {
     code = $('#input').val();
 
     if (code !== '') {
-      Beautify.json(code, function(beautified) {
-        if (beautified !== null) {
-          $('#json_beautifying').html(beautified);
-        } else {
-          $('#json_beautifying').html('<p>Invalid JSON.</p>');
-        }
-      });
+      $('#json_beautifying_container .loader').css('display', 'inline-block');
+      setTimeout(function() {
+        Beautify.json(code, function(beautified) {
+          $('#json_beautifying_container .loader').css('display', 'none');
+          if (beautified !== null) {
+            $('#json_beautifying').html(beautified);
+          } else {
+            $('#json_beautifying').html('<p>Invalid JSON.</p>');
+          }
+        });
+      }, 100);
     }
   });
 
@@ -354,13 +362,17 @@ $(document).ready(function() {
     code = $('#input').val();
 
     if (code !== '') {
-      Beautify.html(code, function(beautified) {
-        if (beautified !== null) {
-          $('#html_beautifying').html(beautified);
-        } else {
-          $('#html_beautifying').html('<p>Invalid HTML.</p>');
-        }
-      });
+      $('#html_beautifying_container .loader').css('display', 'inline-block');
+      setTimeout(function() {
+        Beautify.html(code, function(beautified) {
+          $('#html_beautifying_container .loader').css('display', 'none');
+          if (beautified !== null) {
+            $('#html_beautifying').html(beautified);
+          } else {
+            $('#html_beautifying').html('<p>Invalid HTML.</p>');
+          }
+        });
+      }, 100);
     }
   });
 
@@ -369,13 +381,17 @@ $(document).ready(function() {
     code = $('#input').val();
 
     if (code !== '') {
-      Beautify.css(code, function(beautified) {
-        if (beautified !== null) {
-          $('#css_beautifying').html(beautified);
-        } else {
-          $('#css_beautifying').html('<p>Invalid CSS.</p>');
-        }
-      });
+      $('#css_beautifying_container .loader').css('display', 'inline-block');
+      setTimeout(function() {
+        Beautify.css(code, function(beautified) {
+          $('#css_beautifying_container .loader').css('display', 'none');
+          if (beautified !== null) {
+            $('#css_beautifying').html(beautified);
+          } else {
+            $('#css_beautifying').html('<p>Invalid CSS.</p>');
+          }
+        });
+      }, 100);
     }
   });
 
