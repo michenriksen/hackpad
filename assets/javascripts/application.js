@@ -46,7 +46,11 @@ var UrlEncode = new function() {
   this.encodeAll = function(string) {
     encodedString = '';
     string.split('').forEach(function(b) {
-      encodedString += '%' + b.charCodeAt(0).toString(16);
+      b = b.charCodeAt(0).toString(16).toUpperCase();
+      if (b.length === 1) {
+        b = '0' + b;
+      }
+      encodedString += '%' + b;
     });
     return encodedString;
   };
